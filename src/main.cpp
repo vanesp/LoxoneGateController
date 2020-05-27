@@ -18,6 +18,8 @@
   
 #include <RCSwitch.h>
 
+#include "remote.h"         // this includes the secret keycode
+
 RCSwitch mySwitch = RCSwitch();
 
 void setup() {
@@ -52,13 +54,6 @@ void setup() {
 
 void loop() {
 
-  // Switch on:
-  // The first parameter represents the setting of the first 5 DIP switches. 
-  // In this example it's ON-OFF-ON-OFF-ON.
-  // 
-  // The second parameter represents the setting of the last 5 DIP switches. 
-  // In this example the last 5 DIP switches are OFF-ON-OFF-OFF-OFF. 
-  // This translates to code 1374
   Serial.println("Waiting");
   while (digitalRead(PIN_ENABLE)==0) {
     // just wait until something happens
@@ -67,9 +62,9 @@ void loop() {
   
   Serial.println("Sending on");
   while (digitalRead(PIN_ENABLE)==1) {
+    mySwitch.send(KEYCODE, KEYLENGTH);  
     delayMicroseconds(100);
     // keep sending until ready
-    mySwitch.send(1374, 12);  
   };
   Serial.println("Sending off");
  
