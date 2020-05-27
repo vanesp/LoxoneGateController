@@ -44,26 +44,27 @@ Loxone Configuration
 
 In Loxone a normal Gate Controller is used (and added to the visualisation), with a single Toggle (virtual) output.
 
-![Gate Controller](gatecontrol.png)
+![Gate Controller](img/gatecontrol.png)
 
 The details of the gatecontroller and visualisation are as follows:
 
-![Gate Controller Parameters](gate.png)
+![Gate Controller Parameters](img/gate.png)
 
 The output (VQ) is a Toggle switch.
 
-![VQ Toggle](virtualout.png)
+![VQ Toggle](img/virtualout.png)
 
 Which is only linked to the fixed IP address of the Adafruit Huzzah with Tasmota
 
-![Output](virtout.png)
+![Output](img/virtout.png)
 
 There the Tasmota HTTP webrequests take the form of:
+
     http://<ip>/cm?cmnd=Power%20On
     http://<ip>/cm?cmnd=Power%20Off
 
 And the gate parameters ensure that the duration they are on is 2 seconds, enough for a 433 MHz remote control to train (it sends the commands in batches of 16 repeats anyway).
     
-![Commands](togglecommand.png)
+![Commands](img/togglecommand.png)
 
 
