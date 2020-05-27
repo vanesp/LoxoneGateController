@@ -1,7 +1,7 @@
 Loxone Gate Controller
 ======================
 
-I have a Beninca Brainy gate controller at 230V(https://www.beninca.com/en/accessories/control-panels/swinging-gates.html) , with a number of Beninca ToGo WP remote controllers. Originally I intended to create Loxone control using a Sonoff SV relay over Wifi. However, I found out that the Wifi range did not extend all the way out to the gate.
+I have a Beninca Brainy gate controller at 230V (https://www.beninca.com/en/accessories/control-panels/swinging-gates.html), with a number of Beninca ToGo WP remote controllers. Originally I intended to create Loxone control using a Sonoff SV relay over Wifi. However, I found out that the Wifi range did not extend all the way out to the gate.
 
 I then looked at the remotes. The ToGo WP is fitted with a fixed code, 433.92MHz remote. It's
 settings are done using DIP switches. Opening up I found a Holtec HT12E encoder chip. https://www.holtek.com/productdetail/-/vg/2_12e
