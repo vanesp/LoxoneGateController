@@ -48,12 +48,13 @@ void setup() {
   // Optional set pulse length
   mySwitch.setPulseLength(320);
 
-  // Repeat enough times, required for garagedoors
-  mySwitch.setRepeatTransmit(20);
+  // Repeat enough times, required for garagedoors (> 8, but test it)
+  mySwitch.setRepeatTransmit(30);
 }
 
 void loop() {
 
+  // do nothing, just wait until the pin goes high
   Serial.println("Waiting");
   while (digitalRead(PIN_ENABLE)==0) {
     // just wait until something happens
@@ -61,12 +62,14 @@ void loop() {
   };
   
   Serial.println("Sending on");
-  while (digitalRead(PIN_ENABLE)==1) {
-    mySwitch.send(KEYCODE, KEYLENGTH);  
-    delayMicroseconds(100);
-    // keep sending until ready
-  };
+  // the pin has gone high, repeat sending the key but don't keep doing it
+  // above is defined how many repeats, 20 should be fine
+  mySwitch.send(KEYCODE, KEYLENGTH);  
   Serial.println("Sending off");
+
+  // wait until the pin goes down again, so that we can loop and transmit again
+  while (digitalRead(PIN_ENABLE)==1) {
+    delayMicroseconds(1000);
+  };
  
-  
 }
