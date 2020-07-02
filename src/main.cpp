@@ -49,7 +49,7 @@ void setup() {
   mySwitch.setPulseLength(320);
 
   // Repeat enough times, required for garagedoors (> 8, but test it)
-  mySwitch.setRepeatTransmit(30);
+  mySwitch.setRepeatTransmit(120);
 }
 
 void loop() {
