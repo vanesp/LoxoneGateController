@@ -6,5 +6,5 @@
 // In this example the last 5 DIP switches are OFF-ON-ON-OFF-OFF. 
 
 // the keylength is the number of bits to send, up to max 32
-#define KEYCODE 1894        // replace with your values
-#define KEYLENGTH 23        // your value
+#define KEYCODE 1374        // replace with your values
+#define KEYLENGTH 12        // your value
